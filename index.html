@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drone Photogrammetry Calculator</title>
+    <meta charset='utf-8' />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Lerry William">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <link rel='stylesheet' href='css/normalize.css'>
+    <link rel='stylesheet' href='css/skeleton.css'>
+    <link rel='stylesheet' href='css/jquery-ui.min.css'>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9792889126704578",
+        enable_page_level_ads: true
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125651421-1"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'UA-125651421-1');
+    </script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="three columns"></div>
+            <div class="row">
+                <div class="twelve columns">
+                    <h4>Drone Photogrammetry Calculator</h4>
+                    <!-- <h5>Camera Attributes</h5> -->
+                    <p>Please select your drone model</p>
+                </div>
+                <div class="row">
+                  <div class="six colums">
+                  <select class="u-full-width" title="drones" id="drone_list" onchange="input_params()">
+                    <option value="" selected></option>
+                    <option value="Phantom 4">Phantom 4 (Built in Camera)</option>
+                    <option value="Phantom 4 Pro">Phantom 4 Pro (Built in Camera)</option>
+                    <option value="Phantom 3 Pro">Phantom 3 Pro (Built in Camera)</option>
+                    <option value="Ebee (Canon S110)">Ebee (Canon S110)</option>
+                    <option value="Wingtra RX1">Wingtra RX1</option>
+                  </select>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="six columns">
+                        <label>Altitude (m):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="AGL_known">
+                  </div>
+                  <div class="six columns">
+                        <label>Drone Speed (m/s):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="drone_speed">
+                  </div>
+                </div>
+                <div style="display:none;" class="row">
+                    <div class="six columns">
+                        <label>Sensor Width (mm):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="sensor_width" readonly>
+                    </div>
+                    <div class="six columns">
+                        <label>Sensor Height (mm):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="sensor_height" readonly>
+                    </div>
+                </div>
+                <div style="display:none;" class="row">
+                    <div class="six columns">
+                        <label>Image Width (pixels):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="image_width" readonly>
+                    </div>
+                    <div class="six columns">
+                        <label>Image Height (pixels):</label>
+                        <input type="number" class="u-full-width" placeholder="0" id="image_height" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label>Foward Overlaps %:</label>
+                        <input type="number" min="50" max="100" step="10" class="u-full-width" placeholder="0" id="fwd_gaps">
+                    </div>
+                    <div class="six columns">
+                        <label>Side Overlaps %:</label>
+                        <input type="number" min="50" max="100" step="10" class="u-full-width" placeholder="0" id="side_gaps">
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+              <ul>
+                  <div class="six columns"><button class="u-full-width button-primary" id="GSD_select">Ground Sample Distance</button>
+                  </div>
+                  <div class="six columns"><button class="u-full-width button-primary" id="AGL_select">Altitude</button>
+                  </div>
+              </ul>
+        </div>
+        <div class="row" id="GSD_column" style="display:none">
+        <div class="twelve columns">
+      <h4>Ground Sample Distance (GSD)</h4>
+      </div>
+      <div style="display:none" class="row">
+        <div class="six columns">
+            <label>Pixel Size (mm<sup>2</sup>):</label>
+            <input type="number" class="u-full-width" placeholder="0" id="px" readonly>
+        </div>
+        <!-- <div class="four columns">
+              <label>Altitude (m):</label>
+              <input type="text" class="u-full-width" placeholder="0" id="AGL_known">
+        </div> -->
+        <div style="display:none" class="six columns">
+              <label>Focal Length (mm):</label>
+              <input type="number" class="u-full-width" placeholder="0" id="focal_length" readonly>
+        </div>
+      </div>
+      <div style="display:none" class="row">
+          <div class="twelve columns">
+              <button class="button-primary u-full-width" id="gsd_button">Calculate GSD</button>
+          </div>
+      </div>
+      <div class="row">
+          <div class="six columns">
+              <label>GSD (cm):</label>
+              <input class="u-full-width" type="text" name="gsd" id="gsd">
+          </div>
+          <div class="six columns">
+              <label>Photo Footprint Area (m<sup>2</sup>):</label>
+              <input class="u-full-width" type="text" name="gsd_area" id="gsd_area">
+          </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+            <label>Flight Width (m):</label>
+            <input class="u-full-width" type="text" name="flight_width" id="flight_width">
+        </div>
+        <div class="six columns">
+            <label>Flight Interval (m):</label>
+            <input class="u-full-width" type="text" name="gaps_length" id="gaps_length">
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+            <label>Time Interval (seconds):</label>
+            <input class="u-full-width" type="text" name="lapse" id="lapse">
+        </div>
+        <div class="six columns">
+            <label>Shutter Speed (1/seconds):</label>
+            <input class="u-full-width" type="text" name="shutter_speed" id="shutter_speed">
+        </div>
+      </div>
+    </div>
+    <div class="row" id="AGL_column" style="display:none">
+      <div id="AGL" class="twelve columns">
+      <h4>Altitude (AGL)</h4>
+      </div>
+      <div class="row">
+        <div style="display:none" class="four columns">
+            <label>Pixel Size (mm<sup>2</sup>):</label>
+            <input type="number" class="u-full-width" placeholder="0" id="px2" readonly>
+        </div>
+        <div class="five columns">
+              <label>GSD (cm):</label>
+              <input type="number" class="u-full-width" placeholder="0" id="GSD_known">
+        </div>
+        <div style="display:none" class="four columns">
+              <label>Focal Length (mm):</label>
+              <input type="number" class="u-full-width" placeholder="0" id="focal_length2" readonly>
+        </div>
+      </div>
+      <div class="row">
+          <div class="twelve columns">
+              <button class="button-primary u-full-width" id="AGL_button">Calculate AGL</button>
+          </div>
+          <div class="twelve columns">
+              <label>AGL (m):</label>
+              <input class="u-full-width" type="text" name="agl" id="agl">
+          </div>
+      </div>
+    </div>
+    </div>
+    <hr>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9792889126704578",
+        enable_page_level_ads: true
+      });
+    </script>
+    <footer>
+    <div class="row">
+        <p align="center">Build with ♥ by <a href="https://lerryws.xyz">wslerry</a></p>
+  </footer>
+  <div class="three columns"></div>
+    </div>
+  </body>
+  <script type="text/javascript" src=js/math.min.js></script>
+  <script type="text/javascript" src=http://code.jquery.com/jquery-2.1.4.min.js></script>
+  <script type="text/javascript" src=js/jquery-ui.min.js></script>
+  <script type="text/javascript" src=js/calc.js></script>
+</html>
