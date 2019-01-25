@@ -21,8 +21,7 @@ function input_params(){
        document.getElementById("image_height").value = "3000";
        document.getElementById("focal_length").value = "3.612";
        document.getElementById("focal_length2").value = "3.612";
-       calc_pix_size();
-  }
+       calc_pix_size();}
   if(document.getElementById('drone_list').value == "Phantom 4 Pro") {
         reset_val();
        document.getElementById("sensor_width").value ="13.2";
@@ -31,8 +30,7 @@ function input_params(){
        document.getElementById("image_height").value = "3648";
        document.getElementById("focal_length").value = "8.8";
        document.getElementById("focal_length2").value = "8.8";
-       calc_pix_size();
-  }
+       calc_pix_size();}
   if(document.getElementById('drone_list').value == "Phantom 3 Pro") {
         reset_val();
        document.getElementById("sensor_width").value ="6.17";
@@ -41,8 +39,7 @@ function input_params(){
        document.getElementById("image_height").value = "3000";
        document.getElementById("focal_length").value = "3.57";
        document.getElementById("focal_length2").value = "3.57";
-       calc_pix_size();
-  }
+       calc_pix_size();}
   if(document.getElementById('drone_list').value == "Ebee (Canon S110)") {
         reset_val();
        document.getElementById("sensor_width").value ="7.6";
@@ -51,8 +48,79 @@ function input_params(){
        document.getElementById("image_height").value = "3000";
        document.getElementById("focal_length").value = "5.2";
        document.getElementById("focal_length2").value = "5.2";
-       calc_pix_size();
-  }
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "Parrot Sequoia Monochrome") {
+        reset_val();
+       document.getElementById("sensor_width").value ="4.8";
+       document.getElementById("sensor_height").value = "3.6";
+       document.getElementById("image_width").value = "1280";
+       document.getElementById("image_height").value = "960";
+       document.getElementById("focal_length").value = "3.98";
+       document.getElementById("focal_length2").value = "3.98";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "Parrot Sequoia RGB") {
+        reset_val();
+       document.getElementById("sensor_width").value ="6.17";
+       document.getElementById("sensor_height").value = "4.63";
+       document.getElementById("image_width").value = "4608";
+       document.getElementById("image_height").value = "3456";
+       document.getElementById("focal_length").value = "4.88";
+       document.getElementById("focal_length2").value = "4.88";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "FLIR Vue 336 6.8mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="5.712";
+       document.getElementById("sensor_height").value = "4.352";
+       document.getElementById("image_width").value = "336";
+       document.getElementById("image_height").value = "256";
+       document.getElementById("focal_length").value = "6.8";
+       document.getElementById("focal_length2").value = "6.8";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "FLIR Vue 336 9mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="5.712";
+       document.getElementById("sensor_height").value = "4.352";
+       document.getElementById("image_width").value = "336";
+       document.getElementById("image_height").value = "256";
+       document.getElementById("focal_length").value = "9";
+       document.getElementById("focal_length2").value = "9";
+	   calc_pix_size();}  
+  if(document.getElementById('drone_list').value == "FLIR Vue 336 13mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="5.712";
+       document.getElementById("sensor_height").value = "4.352";
+       document.getElementById("image_width").value = "336";
+       document.getElementById("image_height").value = "256";
+       document.getElementById("focal_length").value = "13";
+       document.getElementById("focal_length2").value = "13";
+	calc_pix_size();}
+  if(document.getElementById('drone_list').value == "FLIR Vue 640 9mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="10.88";
+       document.getElementById("sensor_height").value = "8.704";
+       document.getElementById("image_width").value = "640";
+       document.getElementById("image_height").value = "512";
+       document.getElementById("focal_length").value = "9";
+       document.getElementById("focal_length2").value = "9";
+	   calc_pix_size();}
+  if(document.getElementById('drone_list').value == "FLIR Vue 640 13mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="10.88";
+       document.getElementById("sensor_height").value = "8.704";
+       document.getElementById("image_width").value = "640";
+       document.getElementById("image_height").value = "512";
+       document.getElementById("focal_length").value = "13";
+       document.getElementById("focal_length2").value = "13";
+	   calc_pix_size();}
+  if(document.getElementById('drone_list').value == "FLIR Vue 640 19mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="10.88";
+       document.getElementById("sensor_height").value = "8.704";
+       document.getElementById("image_width").value = "640";
+       document.getElementById("image_height").value = "512";
+       document.getElementById("focal_length").value = "19";
+       document.getElementById("focal_length2").value = "19";
+	   calc_pix_size();}
   if(document.getElementById('drone_list').value == "Wingtra RX1") {
         reset_val();
        document.getElementById("sensor_width").value ="35.9";
@@ -61,8 +129,7 @@ function input_params(){
        document.getElementById("image_height").value = "5320";
        document.getElementById("focal_length").value = "35";
        document.getElementById("focal_length2").value = "35";
-       calc_pix_size();
-  }
+       calc_pix_size();}
   if(document.getElementById('drone_list').value == "") {
         reset_val();
        document.getElementById("sensor_width").value ="";
@@ -71,8 +138,7 @@ function input_params(){
        document.getElementById("image_height").value = "";
        document.getElementById("focal_length").value = "";
        document.getElementById("focal_length2").value = "";
-       calc_pix_size();
-  }
+       calc_pix_size();}
 }
 
 
