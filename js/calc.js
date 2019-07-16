@@ -84,7 +84,7 @@ function input_params(){
        document.getElementById("image_height").value = "256";
        document.getElementById("focal_length").value = "9";
        document.getElementById("focal_length2").value = "9";
-	   calc_pix_size();}  
+	   calc_pix_size();}
   if(document.getElementById('drone_list').value == "FLIR Vue 336 13mm") {
         reset_val();
        document.getElementById("sensor_width").value ="5.712";
@@ -129,6 +129,132 @@ function input_params(){
        document.getElementById("image_height").value = "5320";
        document.getElementById("focal_length").value = "35";
        document.getElementById("focal_length2").value = "35";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "Leica RC30 / 303 mm") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
+       calc_pix_size();}
+  if(document.getElementById('drone_list').value == "") {
+        reset_val();
+       document.getElementById("sensor_width").value ="";
+       document.getElementById("sensor_height").value = "";
+       document.getElementById("image_width").value = "";
+       document.getElementById("image_height").value = "";
+       document.getElementById("focal_length").value = "";
+       document.getElementById("focal_length2").value = "";
        calc_pix_size();}
   if(document.getElementById('drone_list').value == "") {
         reset_val();
