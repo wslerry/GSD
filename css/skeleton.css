@@ -436,3 +436,8 @@ user customize
   /* font-weight: bold; */
   background-color: #FAF398;
 }
+
+nav {
+  margin-top: 20px;
+  margin-bottom: 1px;
+}
