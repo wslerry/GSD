@@ -31,6 +31,15 @@ function input_params(){
        document.getElementById("focal_length").value = "8.8";
        document.getElementById("focal_length2").value = "8.8";
        calc_pix_size();}
+  if(document.getElementById('drone_list').value == "Phantom 4 RTK") {
+        reset_val();
+        document.getElementById("sensor_width").value ="13.2";
+        document.getElementById("sensor_height").value = "8.8";
+        document.getElementById("image_width").value = "5472";
+        document.getElementById("image_height").value = "3648";
+        document.getElementById("focal_length").value = "8.8";
+        document.getElementById("focal_length2").value = "8.8";
+        calc_pix_size();}
   if(document.getElementById('drone_list').value == "Phantom 3 Pro") {
         reset_val();
        document.getElementById("sensor_width").value ="6.17";
@@ -130,59 +139,50 @@ function input_params(){
        document.getElementById("focal_length").value = "35";
        document.getElementById("focal_length2").value = "35";
        calc_pix_size();}
-  if(document.getElementById('drone_list').value == "Leica RC30 / 303 mm") {
+  if(document.getElementById('drone_list').value == "Ebee (Sony WX 100)") {
         reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
+       document.getElementById("sensor_width").value ="6.2";
+       document.getElementById("sensor_height").value = "4.6";
+       document.getElementById("image_width").value = "4896";
+       document.getElementById("image_height").value = "3672";
+       document.getElementById("focal_length").value = "4.45";
+       document.getElementById("focal_length2").value = "4.45";
        calc_pix_size();}
-  if(document.getElementById('drone_list').value == "") {
+  if(document.getElementById('drone_list').value == "Ebee (S.O.D.A)") {
         reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
+       document.getElementById("sensor_width").value ="12.75";
+       document.getElementById("sensor_height").value = "8.5";
+       document.getElementById("image_width").value = "5280";
+       document.getElementById("image_height").value = "3956";
+       document.getElementById("focal_length").value = "10.5";
+       document.getElementById("focal_length2").value = "10.5";
        calc_pix_size();}
-  if(document.getElementById('drone_list').value == "") {
+  if(document.getElementById('drone_list').value == "Wingtra QX1") {
         reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
+       document.getElementById("sensor_width").value ="23.2";
+       document.getElementById("sensor_height").value = "15.4";
+       document.getElementById("image_width").value = "5456";
+       document.getElementById("image_height").value = "3632";
+       document.getElementById("focal_length").value = "15";
+       document.getElementById("focal_length2").value = "15";
        calc_pix_size();}
-  if(document.getElementById('drone_list').value == "") {
+  if(document.getElementById('drone_list').value == "3DR Solo (Sony QX1-16mm)") {
         reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
+       document.getElementById("sensor_width").value ="23.6";
+       document.getElementById("sensor_height").value = "15.8";
+       document.getElementById("image_width").value = "5280";
+       document.getElementById("image_height").value = "3956";
+       document.getElementById("focal_length").value = "16";
+       document.getElementById("focal_length2").value = "16";
        calc_pix_size();}
-  if(document.getElementById('drone_list').value == "") {
+  if(document.getElementById('drone_list').value == "Kespry (Sony QX1-16mm)") {
         reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
-       calc_pix_size();}
-  if(document.getElementById('drone_list').value == "") {
-        reset_val();
-       document.getElementById("sensor_width").value ="";
-       document.getElementById("sensor_height").value = "";
-       document.getElementById("image_width").value = "";
-       document.getElementById("image_height").value = "";
-       document.getElementById("focal_length").value = "";
-       document.getElementById("focal_length2").value = "";
+       document.getElementById("sensor_width").value ="23.6";
+       document.getElementById("sensor_height").value = "15.8";
+       document.getElementById("image_width").value = "5280";
+       document.getElementById("image_height").value = "3956";
+       document.getElementById("focal_length").value = "16";
+       document.getElementById("focal_length2").value = "16";
        calc_pix_size();}
   if(document.getElementById('drone_list').value == "") {
         reset_val();
@@ -272,6 +272,8 @@ function input_params(){
 function reset_val(){
   document.getElementById("gsd").value = "";
   document.getElementById("gsd_area").value = "";
+  document.getElementById("gsd_area_ha").value = "";
+  document.getElementById("gsd_area_acre").value = "";
   document.getElementById("flight_width").value = "";
   document.getElementById("gaps_length").value = "";
   document.getElementById("lapse").value = "";
@@ -319,7 +321,7 @@ function calc_gsd(){
   var flength = document.getElementById("focal_length").value;
 
   var gsdur = (px * altitude / flength) * 100;
-  var gsd = math.round(gsdur, 4);
+  var gsd = math.round(gsdur, 2);
 
   document.getElementById("gsd").value = gsd;
 }
@@ -350,9 +352,13 @@ function calc_photo_area() {
   document.getElementById("lapse").value = lapse;
   document.getElementById("shutter_speed").value = shutter_speed;
 
-  var gsd_area = math.round((gsd_width * gsd_height), 3);
+  var gsd_area = math.round((gsd_width * gsd_height), 2);
+  var gsd_area_ha = math.round(gsd_area/10000, 2)
+  var gsd_area_acre = math.round(gsd_area_ha*2.47105, 2)
 
   document.getElementById("gsd_area").value = gsd_area;
+  document.getElementById("gsd_area_ha").value = gsd_area_ha;
+  document.getElementById("gsd_area_acre").value = gsd_area_acre;
 }
 
 function todo() {

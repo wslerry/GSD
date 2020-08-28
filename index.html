@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drone Photogrammetry Calculator</title>
-  <meta charset='utf-8' />
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="author" content="Lerry William">
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
-	<meta property="og:title" content="Drone Photogrammetry Calculator" />
+    <title>Drone Photogrammetry Calculator</title>
+    <meta charset='utf-8' />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Lerry William">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="Robots" content="index, follow">
+    
+    <meta property="og:title" content="Drone Photogrammetry Calculator" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://lerryws.xyz/GSD/" />
-	<meta property="og:image" content="https://lerryws.xyz/GSD/assets/logo/gsd_calculator.png" />
+	<meta property="og:url" content="https://gsd.lerryws.xyz/" />
+	<meta property="og:image" content="https://gsd.lerryws.xyz/assets/logo/gsd_calculator.png" />
 	<meta property="og:description" content="Calculate GSD,footprint,flight width,flight interval,shutter speed and time interval for aerial photogrammetry." />
 	<meta name="twitter:card" content="summary_large_image"/>
-  <link rel='stylesheet' href='css/normalize.css'>
-  <link rel='stylesheet' href='css/skeleton.css'>
-  <link rel='stylesheet' href='css/jquery-ui.min.css'>
+    
+    <link rel='stylesheet' href='css/normalize.css'>
+    <link rel='stylesheet' href='css/skeleton.css'>
+    <link rel='stylesheet' href='css/jquery-ui.min.css'>
 
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -59,10 +66,13 @@
                   <div class="twelve colums">
                   <select class="u-full-width" title="drones" id="drone_list" onchange="input_params()">
                     <option value="" selected></option>
-                    <option value="Phantom 4">Phantom 4 (Built in Camera)</option>
-                    <option value="Phantom 4 Pro">Phantom 4 Pro (Built in Camera)</option>
-                    <option value="Phantom 3 Pro">Phantom 3 Pro (Built in Camera)</option>
+                    <option value="Phantom 3 Pro">Phantom 3 Pro</option>
+                    <option value="Phantom 4">Phantom 4</option>
+                    <option value="Phantom 4 Pro">Phantom 4 Pro</option>
+                    <option value="Phantom 4 RTK">Phantom 4 RTK</option>
                     <option value="Ebee (Canon S110)">Ebee (Canon S110)</option>
+                    <option value="Ebee (S.O.D.A)">Ebee (S.O.D.A)</option>
+                    <option value="Ebee (Sony WX 100)">Ebee (Sony WX 100)</option>
                     <option value="Parrot Sequoia Monochrome">Parrot Sequoia Monochrome</option>
                     <option value="Parrot Sequoia RGB">Parrot Sequoia RGB</option>
                     <option value="FLIR Vue 336 6.8mm">FLIR Vue 336 6.8mm</option>
@@ -72,6 +82,9 @@
                     <option value="FLIR Vue 640 13mm">FLIR Vue 640 13mm</option>
                     <option value="FLIR Vue 640 19mm">FLIR Vue 640 19mm</option>
                     <option value="Wingtra RX1">Wingtra RX1</option>
+                    <option value="Wingtra QX1">Wingtra QX1</option>
+                    <option value="3DR Solo (Sony QX1-16mm)">3DR Solo</option>
+                    <option value="Kespry (Sony QX1-16mm)">Kespry</option>
                   </select>
                 </div>
                 </div>
@@ -155,21 +168,25 @@
               <div class="six columns">
                   <label>Photo Footprint Area (m<sup>2</sup>):</label>
                   <input class="u-full-width" type="text" name="gsd_area" id="gsd_area">
+                  <label>Photo Footprint Area (Ha):</label>
+                  <input class="u-full-width" type="text" name="gsd_area_ha" id="gsd_area_ha">
+                  <label>Photo Footprint Area (Acre):</label>
+                  <input class="u-full-width" type="text" name="gsd_area_acre" id="gsd_area_acre">
               </div>
           </div>
           <div class="row">
             <div class="six columns">
-                <label>Flight Width (m):</label>
+                <label>Flight Width (m) @ side overlaps:</label>
                 <input class="u-full-width" type="text" name="flight_width" id="flight_width">
             </div>
             <div class="six columns">
-                <label>Flight Interval (m):</label>
+                <label>Flight Interval (m) @ forward overlaps:</label>
                 <input class="u-full-width" type="text" name="gaps_length" id="gaps_length">
             </div>
           </div>
           <div class="row">
             <div class="six columns">
-                <label>Time Interval (seconds):</label>
+                <label>Time Interval (seconds) :</label>
                 <input class="u-full-width" type="text" name="lapse" id="lapse">
             </div>
             <div class="six columns">

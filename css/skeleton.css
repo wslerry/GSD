@@ -429,7 +429,7 @@ there.
 /* ...
 user customize
 ... */
-#gsd,#gsd_area,
+#gsd,#gsd_area,#gsd_area_ha,#gsd_area_acre,
 #flight_width,#gaps_length,
 #lapse,#shutter_speed,#agl{
   font-size: 1em;
