@@ -638,6 +638,11 @@ there.
 /* ...
 user customize
 ... */
+
+body{
+  font-family:'Ubuntu', 'Open Sans', sans-serif;
+}
+
 #gsd,
 #gsd_area,
 #gsd_area_ha,
