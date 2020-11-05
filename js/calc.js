@@ -203,24 +203,24 @@ function input_params() {
             document.getElementById("focal_length2").value = "16";
             calc_pix_size();
       }
-      if (document.getElementById('drone_list').value == "") {
+      if (document.getElementById('drone_list').value == "Mavic Pro") {
             reset_val();
-            document.getElementById("sensor_width").value = "";
-            document.getElementById("sensor_height").value = "";
-            document.getElementById("image_width").value = "";
-            document.getElementById("image_height").value = "";
-            document.getElementById("focal_length").value = "";
-            document.getElementById("focal_length2").value = "";
+            document.getElementById("sensor_width").value = "6.16";
+            document.getElementById("sensor_height").value = "4.62";
+            document.getElementById("image_width").value = "4000";
+            document.getElementById("image_height").value = "3000";
+            document.getElementById("focal_length").value = "4.98";
+            document.getElementById("focal_length2").value = "4.98";
             calc_pix_size();
       }
-      if (document.getElementById('drone_list').value == "") {
+      if (document.getElementById('drone_list').value == "Mavic Pro 2") {
             reset_val();
-            document.getElementById("sensor_width").value = "";
-            document.getElementById("sensor_height").value = "";
-            document.getElementById("image_width").value = "";
-            document.getElementById("image_height").value = "";
-            document.getElementById("focal_length").value = "";
-            document.getElementById("focal_length2").value = "";
+            document.getElementById("sensor_width").value = "13.2";
+            document.getElementById("sensor_height").value = "8.8";
+            document.getElementById("image_width").value = "5472";
+            document.getElementById("image_height").value = "3648";
+            document.getElementById("focal_length").value = "10.35";
+            document.getElementById("focal_length2").value = "10.35";
             calc_pix_size();
       }
       if (document.getElementById('drone_list').value == "") {
